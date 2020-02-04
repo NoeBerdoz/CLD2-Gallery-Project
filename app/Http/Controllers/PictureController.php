@@ -24,7 +24,7 @@ class PictureController extends Controller
      */
     public function create()
     {
-        //
+        return view('pictures.create');
     }
 
     /**
