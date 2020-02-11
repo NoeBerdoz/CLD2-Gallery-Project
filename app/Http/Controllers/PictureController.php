@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PictureRequest;
 use App\Picture;
 use Illuminate\Http\Request;
 
@@ -33,9 +34,17 @@ class PictureController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PictureRequest $request) // Validation System on the PictureRequest.php file
     {
-        //
+        $picture = new Picture;
+        $picture->fill($request->all());
+        $picture->storage_path = $request->picture->store('pictures');
+        if ($picture->save()){
+
+        }
+        else {
+            return "Mauvais";
+        }
     }
 
     /**
