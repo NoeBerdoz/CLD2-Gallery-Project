@@ -1,4 +1,5 @@
 <ul>
+
     @foreach($pictures as $picture)
         <li>
             <a href="{{ route('pictures.show', $picture) }}">
@@ -7,5 +8,6 @@
             </a>
         </li>
     @endforeach
+
 </ul>
 

@@ -41,13 +41,9 @@ class PictureController extends Controller
     {
         $picture = new Picture;
         $picture->fill($request->all());
-        $picture->storage_path = $request->picture->store('pictures');
-        if ($picture->save()){
-
-        }
-        else {
-            return "Mauvais";
-        }
+        $picture->storage_path = $request->picture->store('pictures', 's3');
+        $picture->save();
+        return redirect()->Route('pictures.show', $picture);
     }
 
     /**
@@ -56,10 +52,10 @@ class PictureController extends Controller
      * @param  \App\Picture  $picture
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request,Picture $picture)
+    public function show(Request $request, Picture $picture)
     {
         if (\Str::startsWith($request->header('Accept'), 'image')){
-            return \Storage::get($picture->storage_path);
+            return redirect(\Storage::disk('s3')->temporaryUrl($picture->storage_path, now()->addMinutes(1)));
         }
 
         return view('pictures.show', compact('picture'));
@@ -94,8 +90,10 @@ class PictureController extends Controller
      * @param  \App\Picture  $picture
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Picture $picture)
+    public function destroy(Request $request, Picture $picture)
     {
-        //
+        Storage::disk('s3')->delete($picture->storage_path);
+        $picture->delete();
+        return redirect(route('pictures.index'));
     }
 }
