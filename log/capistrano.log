@@ -1919,3 +1919,212 @@ Migrating: 2020_02_04_102626_create_pictures_table
   INFO [909e19ca] Running /usr/bin/env echo "Branch master (at a57ed999d5ca2a4fc0a1778e12634d8136b92556) deployed as release 20200317140524 by berdo" >> /home/cld2_15/cld2-15.mycpnv.ch/revisions.log as cld2_15@cld2-15.mycpnv.ch
  DEBUG [909e19ca] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/releases && /usr/bin/env echo "Branch master (at a57ed999d5ca2a4fc0a1778e12634d8136b92556) deployed as release 20200317140524 by berdo" >> /home/cld2_15/cld2-15.mycpnv.ch/revisions.log
   INFO [909e19ca] Finished in 0.154 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-17 15:11:36 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4083a505] Running /usr/bin/env mkdir -p /tmp as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [4083a505] Command: /usr/bin/env mkdir -p /tmp
+  INFO [4083a505] Finished in 0.537 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-CLD2-Gallery-Project-production-berdo.sh 0.0%
+  INFO Uploading /tmp/git-ssh-CLD2-Gallery-Project-production-berdo.sh 100.0%
+  INFO [17c75d9c] Running /usr/bin/env chmod 700 /tmp/git-ssh-CLD2-Gallery-Project-production-berdo.sh as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [17c75d9c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-CLD2-Gallery-Project-production-berdo.sh
+  INFO [17c75d9c] Finished in 0.142 seconds with exit status 0 (successful).
+  INFO [1414140f] Running /usr/bin/env git ls-remote git@github.com:NoeBerdoz/CLD2-Gallery-Project.git HEAD as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [1414140f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CLD2-Gallery-Project-production-berdo.sh" ; /usr/bin/env git ls-remote git@github.com:NoeBerdoz/CLD2-Gallery-Project.git HEAD )
+ DEBUG [1414140f] 	cee5cf83445bfe28ff8a276baa904d4bf351f26e	HEAD
+  INFO [1414140f] Finished in 1.502 seconds with exit status 0 (successful).
+  INFO [eaf114e7] Running /usr/bin/env mkdir -p /home/cld2_15/cld2-15.mycpnv.ch/shared /home/cld2_15/cld2-15.mycpnv.ch/releases as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [eaf114e7] Command: /usr/bin/env mkdir -p /home/cld2_15/cld2-15.mycpnv.ch/shared /home/cld2_15/cld2-15.mycpnv.ch/releases
+  INFO [eaf114e7] Finished in 0.175 seconds with exit status 0 (successful).
+  INFO [0e5007f4] Running /usr/bin/env mkdir -p /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/app /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/cache /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/sessions /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/views /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/logs as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [0e5007f4] Command: /usr/bin/env mkdir -p /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/app /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/cache /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/sessions /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/views /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/logs
+  INFO [0e5007f4] Finished in 0.220 seconds with exit status 0 (successful).
+ DEBUG [fcb0af37] Running [ -f /home/cld2_15/cld2-15.mycpnv.ch/current/REVISION ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [fcb0af37] Command: [ -f /home/cld2_15/cld2-15.mycpnv.ch/current/REVISION ]
+ DEBUG [fcb0af37] Finished in 0.196 seconds with exit status 0 (successful).
+ DEBUG [ee73b97f] Running /usr/bin/env cat /home/cld2_15/cld2-15.mycpnv.ch/current/REVISION 2>/dev/null as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [ee73b97f] Command: /usr/bin/env cat /home/cld2_15/cld2-15.mycpnv.ch/current/REVISION 2>/dev/null
+ DEBUG [ee73b97f] 	a57ed999d5ca2a4fc0a1778e12634d8136b92556
+ DEBUG [ee73b97f] Finished in 0.263 seconds with exit status 0 (successful).
+ DEBUG [eee008b1] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/shared; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/shared'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [eee008b1] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/shared; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/shared'" 1>&2; false; fi
+ DEBUG [eee008b1] Finished in 0.252 seconds with exit status 0 (successful).
+  INFO [938472c7] Running /usr/bin/env mkdir -p storage/app as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [938472c7] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/shared && /usr/bin/env mkdir -p storage/app
+  INFO [938472c7] Finished in 0.328 seconds with exit status 0 (successful).
+ DEBUG [0cdd809f] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/shared; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/shared'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [0cdd809f] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/shared; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/shared'" 1>&2; false; fi
+ DEBUG [0cdd809f] Finished in 0.351 seconds with exit status 0 (successful).
+  INFO [cd4a5bfa] Running /usr/bin/env mkdir -p storage/framework/cache as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [cd4a5bfa] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/shared && /usr/bin/env mkdir -p storage/framework/cache
+  INFO [cd4a5bfa] Finished in 0.220 seconds with exit status 0 (successful).
+ DEBUG [192c89f8] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/shared; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/shared'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [192c89f8] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/shared; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/shared'" 1>&2; false; fi
+ DEBUG [192c89f8] Finished in 0.153 seconds with exit status 0 (successful).
+  INFO [20a34bc2] Running /usr/bin/env mkdir -p storage/framework/sessions as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [20a34bc2] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/shared && /usr/bin/env mkdir -p storage/framework/sessions
+  INFO [20a34bc2] Finished in 0.350 seconds with exit status 0 (successful).
+ DEBUG [7dedcb58] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/shared; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/shared'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [7dedcb58] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/shared; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/shared'" 1>&2; false; fi
+ DEBUG [7dedcb58] Finished in 0.275 seconds with exit status 0 (successful).
+  INFO [af594e2f] Running /usr/bin/env mkdir -p storage/framework/views as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [af594e2f] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/shared && /usr/bin/env mkdir -p storage/framework/views
+  INFO [af594e2f] Finished in 0.525 seconds with exit status 0 (successful).
+ DEBUG [06aae9fe] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/shared; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/shared'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [06aae9fe] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/shared; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/shared'" 1>&2; false; fi
+ DEBUG [06aae9fe] Finished in 0.283 seconds with exit status 0 (successful).
+  INFO [536e13cf] Running /usr/bin/env mkdir -p storage/logs as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [536e13cf] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/shared && /usr/bin/env mkdir -p storage/logs
+  INFO [536e13cf] Finished in 0.242 seconds with exit status 0 (successful).
+ DEBUG [243d414c] Running [ -f /home/cld2_15/cld2-15.mycpnv.ch/repo/HEAD ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [243d414c] Command: [ -f /home/cld2_15/cld2-15.mycpnv.ch/repo/HEAD ]
+ DEBUG [243d414c] Finished in 0.286 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/cld2_15/cld2-15.mycpnv.ch/repo
+ DEBUG [4eabb09b] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/repo; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/repo'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [4eabb09b] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/repo; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/repo'" 1>&2; false; fi
+ DEBUG [4eabb09b] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO [e937c11b] Running /usr/bin/env git remote set-url origin git@github.com:NoeBerdoz/CLD2-Gallery-Project.git as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [e937c11b] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CLD2-Gallery-Project-production-berdo.sh" ; /usr/bin/env git remote set-url origin git@github.com:NoeBerdoz/CLD2-Gallery-Project.git )
+  INFO [e937c11b] Finished in 0.252 seconds with exit status 0 (successful).
+  INFO [781d8982] Running /usr/bin/env git remote update --prune as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [781d8982] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CLD2-Gallery-Project-production-berdo.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [781d8982] 	Fetching origin
+ DEBUG [781d8982] 	From github.com:NoeBerdoz/CLD2-Gallery-Project
+   a57ed99..cee5cf8  master     -> master
+  INFO [781d8982] Finished in 1.717 seconds with exit status 0 (successful).
+ DEBUG [0d8cee4a] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/repo; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/repo'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [0d8cee4a] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/repo; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/repo'" 1>&2; false; fi
+ DEBUG [0d8cee4a] Finished in 0.207 seconds with exit status 0 (successful).
+  INFO [c1f27364] Running /usr/bin/env mkdir -p /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143 as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [c1f27364] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CLD2-Gallery-Project-production-berdo.sh" ; /usr/bin/env mkdir -p /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143 )
+  INFO [c1f27364] Finished in 0.177 seconds with exit status 0 (successful).
+  INFO [cdb0857e] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143 as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [cdb0857e] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CLD2-Gallery-Project-production-berdo.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143 )
+  INFO [cdb0857e] Finished in 0.239 seconds with exit status 0 (successful).
+ DEBUG [c6c9206f] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/repo; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/repo'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [c6c9206f] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/repo; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/repo'" 1>&2; false; fi
+ DEBUG [c6c9206f] Finished in 0.143 seconds with exit status 0 (successful).
+ DEBUG [5788bb2a] Running /usr/bin/env git rev-list --max-count=1 master as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [5788bb2a] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-CLD2-Gallery-Project-production-berdo.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [5788bb2a] 	cee5cf83445bfe28ff8a276baa904d4bf351f26e
+ DEBUG [5788bb2a] Finished in 0.187 seconds with exit status 0 (successful).
+ DEBUG [5ccda857] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [5ccda857] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143'" 1>&2; false; fi
+ DEBUG [5ccda857] Finished in 0.164 seconds with exit status 0 (successful).
+  INFO [57fe2951] Running /usr/bin/env echo "cee5cf83445bfe28ff8a276baa904d4bf351f26e" > REVISION as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [57fe2951] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143 && /usr/bin/env echo "cee5cf83445bfe28ff8a276baa904d4bf351f26e" > REVISION
+  INFO [57fe2951] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [420b33d7] Running /usr/bin/env mkdir -p /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [420b33d7] Command: /usr/bin/env mkdir -p /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework
+  INFO [420b33d7] Finished in 0.176 seconds with exit status 0 (successful).
+ DEBUG [e7e70e15] Running [ -L /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/app ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [e7e70e15] Command: [ -L /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/app ]
+ DEBUG [e7e70e15] Finished in 0.152 seconds with exit status 1 (failed).
+ DEBUG [9dc70377] Running [ -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/app ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [9dc70377] Command: [ -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/app ]
+ DEBUG [9dc70377] Finished in 0.164 seconds with exit status 0 (successful).
+  INFO [0332705a] Running /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/app as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [0332705a] Command: /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/app
+  INFO [0332705a] Finished in 0.154 seconds with exit status 0 (successful).
+  INFO [b6122289] Running /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/app /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/app as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [b6122289] Command: /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/app /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/app
+  INFO [b6122289] Finished in 0.186 seconds with exit status 0 (successful).
+ DEBUG [622d628a] Running [ -L /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/cache ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [622d628a] Command: [ -L /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/cache ]
+ DEBUG [622d628a] Finished in 0.164 seconds with exit status 1 (failed).
+ DEBUG [d6fc845d] Running [ -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/cache ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [d6fc845d] Command: [ -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/cache ]
+ DEBUG [d6fc845d] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [1cee1bb1] Running /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/cache as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [1cee1bb1] Command: /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/cache
+  INFO [1cee1bb1] Finished in 0.176 seconds with exit status 0 (successful).
+  INFO [d9a540f8] Running /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/cache /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/cache as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [d9a540f8] Command: /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/cache /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/cache
+  INFO [d9a540f8] Finished in 0.207 seconds with exit status 0 (successful).
+ DEBUG [c2448700] Running [ -L /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/sessions ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [c2448700] Command: [ -L /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/sessions ]
+ DEBUG [c2448700] Finished in 0.164 seconds with exit status 1 (failed).
+ DEBUG [d7b03064] Running [ -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/sessions ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [d7b03064] Command: [ -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/sessions ]
+ DEBUG [d7b03064] Finished in 0.209 seconds with exit status 0 (successful).
+  INFO [11c7181c] Running /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/sessions as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [11c7181c] Command: /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/sessions
+  INFO [11c7181c] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO [389689bd] Running /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/sessions /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/sessions as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [389689bd] Command: /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/sessions /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/sessions
+  INFO [389689bd] Finished in 0.198 seconds with exit status 0 (successful).
+ DEBUG [9c8742ef] Running [ -L /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/views ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [9c8742ef] Command: [ -L /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/views ]
+ DEBUG [9c8742ef] Finished in 0.165 seconds with exit status 1 (failed).
+ DEBUG [0204a3c1] Running [ -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/views ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [0204a3c1] Command: [ -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/views ]
+ DEBUG [0204a3c1] Finished in 0.176 seconds with exit status 0 (successful).
+  INFO [bb5a6c4d] Running /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/views as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [bb5a6c4d] Command: /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/views
+  INFO [bb5a6c4d] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [c35c2d63] Running /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/views /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/views as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [c35c2d63] Command: /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/framework/views /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/framework/views
+  INFO [c35c2d63] Finished in 0.163 seconds with exit status 0 (successful).
+ DEBUG [bdd02c87] Running [ -L /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/logs ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [bdd02c87] Command: [ -L /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/logs ]
+ DEBUG [bdd02c87] Finished in 0.143 seconds with exit status 1 (failed).
+ DEBUG [f77fbe24] Running [ -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/logs ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [f77fbe24] Command: [ -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/logs ]
+ DEBUG [f77fbe24] Finished in 0.143 seconds with exit status 0 (successful).
+  INFO [b76dc024] Running /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/logs as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [b76dc024] Command: /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/logs
+  INFO [b76dc024] Finished in 0.164 seconds with exit status 0 (successful).
+  INFO [3bb80b2c] Running /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/logs /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/logs as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [3bb80b2c] Command: /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/shared/storage/logs /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/storage/logs
+  INFO [3bb80b2c] Finished in 0.163 seconds with exit status 0 (successful).
+ DEBUG [7b480ed0] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [7b480ed0] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143'" 1>&2; false; fi
+ DEBUG [7b480ed0] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO [ab741e9a] Running php -d allow_url_fopen=true /home/cld2_15/cld2-15.mycpnv.ch/shared/composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [ab741e9a] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143 && php -d allow_url_fopen=true /home/cld2_15/cld2-15.mycpnv.ch/shared/composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader
+  INFO [ab741e9a] Finished in 5.522 seconds with exit status 0 (successful).
+ DEBUG [f492d71d] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [f492d71d] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143'" 1>&2; false; fi
+ DEBUG [f492d71d] Finished in 0.143 seconds with exit status 0 (successful).
+  INFO [1f237df6] Running /usr/bin/env php artisan storage:link --env=production as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [1f237df6] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143 && /usr/bin/env php artisan storage:link --env=production
+ DEBUG [1f237df6] 	The [public/storage] directory has been linked.
+  INFO [1f237df6] Finished in 0.493 seconds with exit status 0 (successful).
+  INFO [b578d7b7] Running /usr/bin/env cp /home/cld2_15/cld2-15.mycpnv.ch/shared/.env /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/.env as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [b578d7b7] Command: /usr/bin/env cp /home/cld2_15/cld2-15.mycpnv.ch/shared/.env /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143/.env
+  INFO [b578d7b7] Finished in 0.172 seconds with exit status 0 (successful).
+ DEBUG [cdc6d4e1] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [cdc6d4e1] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143'" 1>&2; false; fi
+ DEBUG [cdc6d4e1] Finished in 0.195 seconds with exit status 0 (successful).
+  INFO [8d1eb6fc] Running /usr/bin/env php artisan migrate --force --env=production as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [8d1eb6fc] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143 && /usr/bin/env php artisan migrate --force --env=production
+ DEBUG [8d1eb6fc] 	Nothing to migrate.
+  INFO [8d1eb6fc] Finished in 0.581 seconds with exit status 0 (successful).
+  INFO [129e3a41] Running /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143 /home/cld2_15/cld2-15.mycpnv.ch/releases/current as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [129e3a41] Command: /usr/bin/env ln -s /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143 /home/cld2_15/cld2-15.mycpnv.ch/releases/current
+  INFO [129e3a41] Finished in 0.215 seconds with exit status 0 (successful).
+  INFO [6ad9e564] Running /usr/bin/env mv /home/cld2_15/cld2-15.mycpnv.ch/releases/current /home/cld2_15/cld2-15.mycpnv.ch as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [6ad9e564] Command: /usr/bin/env mv /home/cld2_15/cld2-15.mycpnv.ch/releases/current /home/cld2_15/cld2-15.mycpnv.ch
+  INFO [6ad9e564] Finished in 0.230 seconds with exit status 0 (successful).
+ DEBUG [c260f474] Running /usr/bin/env ls -x /home/cld2_15/cld2-15.mycpnv.ch/releases as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [c260f474] Command: /usr/bin/env ls -x /home/cld2_15/cld2-15.mycpnv.ch/releases
+ DEBUG [c260f474] 	20200317140052	20200317140524	20200317141143
+ DEBUG [c260f474] Finished in 0.154 seconds with exit status 0 (successful).
+  INFO Keeping 2 of 3 deployed releases on cld2-15.mycpnv.ch
+ DEBUG [38526796] Running [ -d /home/cld2_15/cld2-15.mycpnv.ch/current ] as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [38526796] Command: [ -d /home/cld2_15/cld2-15.mycpnv.ch/current ]
+ DEBUG [38526796] Finished in 0.196 seconds with exit status 0 (successful).
+ DEBUG [e6f32521] Running /usr/bin/env readlink /home/cld2_15/cld2-15.mycpnv.ch/current as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [e6f32521] Command: /usr/bin/env readlink /home/cld2_15/cld2-15.mycpnv.ch/current
+ DEBUG [e6f32521] 	/home/cld2_15/cld2-15.mycpnv.ch/releases/20200317141143
+ DEBUG [e6f32521] Finished in 0.198 seconds with exit status 0 (successful).
+  INFO [3b61814d] Running /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317140052 as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [3b61814d] Command: /usr/bin/env rm -rf /home/cld2_15/cld2-15.mycpnv.ch/releases/20200317140052
+  INFO [3b61814d] Finished in 1.127 seconds with exit status 0 (successful).
+ DEBUG [ab348691] Running if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/releases; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/releases'" 1>&2; false; fi as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [ab348691] Command: if test ! -d /home/cld2_15/cld2-15.mycpnv.ch/releases; then echo "Directory does not exist '/home/cld2_15/cld2-15.mycpnv.ch/releases'" 1>&2; false; fi
+ DEBUG [ab348691] Finished in 0.154 seconds with exit status 0 (successful).
+  INFO [2b8e94c2] Running /usr/bin/env echo "Branch master (at cee5cf83445bfe28ff8a276baa904d4bf351f26e) deployed as release 20200317141143 by berdo" >> /home/cld2_15/cld2-15.mycpnv.ch/revisions.log as cld2_15@cld2-15.mycpnv.ch
+ DEBUG [2b8e94c2] Command: cd /home/cld2_15/cld2-15.mycpnv.ch/releases && /usr/bin/env echo "Branch master (at cee5cf83445bfe28ff8a276baa904d4bf351f26e) deployed as release 20200317141143 by berdo" >> /home/cld2_15/cld2-15.mycpnv.ch/revisions.log
+  INFO [2b8e94c2] Finished in 0.154 seconds with exit status 0 (successful).
