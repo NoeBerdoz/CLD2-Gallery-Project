@@ -10,21 +10,21 @@ set :ssh_options, {
 SSHKit.config.command_map[:composer] = "php -d allow_url_fopen=true #{shared_path.join('composer')}"
 
 set :laravel_set_acl_paths, false
-set :laravel_upload_dotenv_file_on_deploy, true
+#set :laravel_upload_dotenv_file_on_deploy, true
 set :keep_releases, 2
 
 #on désactive laravel optimize
 Rake::Task['laravel:optimize'].clear_actions rescue nil
 
 #on veut faire la task copy_dotenv après composer run!
-after 'composer:run', 'copy_dotenv'
-task :copy_dotenv do
-  on roles(:all) do
-    execute :cp, "#{shared_path}/.env #{release_path}/.env"
-  end
-end
+#after 'composer:run', 'copy_dotenv'
+#task :copy_dotenv do
+#  on roles(:all) do
+#    execute :cp, "#{shared_path}/.env #{release_path}/.env"
+#  end
+#end
 # pour lancer le migrate
-after 'copy_dotenv', 'laravel:migrate'
+#after 'copy_dotenv', 'laravel:migrate'
 
 # server-based syntax
 # ======================
