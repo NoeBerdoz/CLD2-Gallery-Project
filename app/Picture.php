@@ -8,5 +8,6 @@ class Picture extends Model
 {
     protected $fillable = [
         'title',
+        'storage_path',
     ];
 }

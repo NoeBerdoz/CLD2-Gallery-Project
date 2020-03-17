@@ -54,7 +54,9 @@ class PictureController extends Controller
         $formInputs = $postObject->getFormInputs();
 
 
-        return view("pictures.create", compact("formAttributes", "formInputs"));
+        return view('pictures.create', ['s3attributes' => $formAttributes,
+            's3inputs' => $formInputs
+        ]);
     }
 
     /**
