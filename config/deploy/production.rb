@@ -10,7 +10,7 @@ set :ssh_options, {
 SSHKit.config.command_map[:composer] = "php -d allow_url_fopen=true #{shared_path.join('composer')}"
 
 set :laravel_set_acl_paths, false
-set :laravel_upload_dotenv_file_on_deploy, true
+set :laravel_upload_dotenv_file_on_deploy, false
 set :keep_releases, 2
 
 #on désactive laravel optimize
