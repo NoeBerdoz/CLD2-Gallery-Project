@@ -5,7 +5,6 @@ set :application, "CLD2-Gallery-Project"
 set :repo_url, "git@github.com:NoeBerdoz/CLD2-Gallery-Project.git"
 
 # Default branch is :master
-set :branch, "develop"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
