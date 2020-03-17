@@ -36,7 +36,7 @@ class PictureController extends Controller
         ]);
 
         $bucket = env('AWS_BUCKET');
-        $key = "pictures/DVF" . str::random(40);
+        $key = "pictures/NB" . str::random(40);
         $formInputs = ['acl' => 'private', 'key' => $key];
 
         $options = [
