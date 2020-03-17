@@ -1,21 +1,21 @@
-@extends('layouts.app')
+@extends('layouts/app')
 
 @push('scripts')
-    <script src="/js/s3upload.js"></script>
+    <script src="/js/uploadFile.js"></script>
 @endpush
 
 @section('content')
-<form action="{{ route('pictures.store')}}" method="POST" class="s3upload" data-s3attributes="{{ json_encode($s3attributes) }}" data-s3inputs="{{ json_encode($s3inputs) }}" enctype="multipart/form-data">
+    <a href="{{ route('pictures.index') }}">galerie d'images</a>
+    <form action="{{ route('pictures.store') }}" method="post" enctype="multipart/form-data" data-inputs="{{ json_encode($formInputs) }}" data-attributes="{{ json_encode($formAttributes) }}">
+        @csrf
 
-    @csrf
-    @error('title')
-        <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
+        {{$errors->first('title')}}
+        <input type="text" name="title" required/><br/>
 
-    <input id="title" type="text" name="title">
+        {{$errors->first('picture')}}
+        <input type="file" name="file" required/><br/>
+        <input type="hidden" name="storage_path" value="{{ $formInputs['key'] }}"/>
 
-    <input id="file" type="file" id="image_uploader" name="file">
-    <input type="hidden" name="storage_path" value="{{ $s3inputs['key'] }}">
-    <input type="submit">
-</form>
+        <input type="submit"/>
+    </form>
 @endsection

@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Http\Requests\PictureRequest;
+use Str;
+use Storage;
 use App\Picture;
+use App\Http\Requests\PictureRequest;
 use Illuminate\Http\Request;
-use Illuminate\Session\Store;
-use Illuminate\Support\Facades\Storage;
+
+use Aws\S3\S3Client;
+use Aws\S3\PostObjectV4;
 
 class PictureController extends Controller
 {
@@ -28,28 +30,31 @@ class PictureController extends Controller
      */
     public function create()
     {
-        $awsClient = new \Aws\S3\S3Client([
+        $client = new S3Client([
             'version' => 'latest',
             'region' => env('AWS_DEFAULT_REGION'),
         ]);
 
         $bucket = env('AWS_BUCKET');
-        $key = "pictures/" . \Str::random(40);
+        $key = "pictures/DVF" . str::random(40);
         $formInputs = ['acl' => 'private', 'key' => $key];
+
         $options = [
             ['acl' => 'private'],
             ['bucket' => $bucket],
-            ['eq', '$key', $key],
+            ['eq','$key', $key]
         ];
 
-        $postObject = new \Aws\S3\PostObjectV4(
-            $awsClient, $bucket, $formInputs, $options, "+1 hours"
-        );
+        $expires = '+5 minutes';
 
-        return view('pictures.create', [
-            's3attributes' => $postObject->getFormAttributes(),
-            's3inputs' => $postObject->getFormInputs(),
-        ]);
+        $postObject = new PostObjectV4($client, $bucket, $formInputs, $options, $expires);
+
+        $formAttributes = $postObject->getFormAttributes();
+
+        $formInputs = $postObject->getFormInputs();
+
+
+        return view("pictures.create", compact("formAttributes", "formInputs"));
     }
 
     /**
@@ -58,15 +63,12 @@ class PictureController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PictureRequest $request) // Validation System on the PictureRequest.php file
+    public function store(PictureRequest $request)
     {
         $picture = new Picture;
         $picture->fill($request->all());
-        // $picture->storage_path = $request->picture->store('pictures', 's3');
         $picture->save();
-        return redirect()->Route('pictures.show', $picture);
-
-
+        return redirect()->route("pictures.index");
     }
 
     /**
@@ -77,8 +79,8 @@ class PictureController extends Controller
      */
     public function show(Request $request, Picture $picture)
     {
-        if (\Str::startsWith($request->header('Accept'), 'image')){
-            return redirect(\Storage::disk('s3')->temporaryUrl($picture->storage_path, now()->addMinutes(1)));
+        if(Str::startsWith($request->header('Accept'),"image")){
+            return redirect(Storage::disk('s3')->temporaryUrl($picture->storage_path, now()->addMinutes(1)));
         }
 
         return view('pictures.show', compact('picture'));
@@ -113,10 +115,11 @@ class PictureController extends Controller
      * @param  \App\Picture  $picture
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, Picture $picture)
+    public function destroy(Picture $picture)
     {
         Storage::disk('s3')->delete($picture->storage_path);
         $picture->delete();
-        return redirect(route('pictures.index'));
+
+        return redirect()->route("pictures.index");
     }
 }
