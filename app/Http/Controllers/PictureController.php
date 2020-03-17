@@ -62,7 +62,7 @@ class PictureController extends Controller
     {
         $picture = new Picture;
         $picture->fill($request->all());
-        $picture->storage_path = $request->picture->store('pictures', 's3');
+        // $picture->storage_path = $request->picture->store('pictures', 's3');
         $picture->save();
         return redirect()->Route('pictures.show', $picture);
 

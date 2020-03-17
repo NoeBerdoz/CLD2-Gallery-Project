@@ -1,13 +1,14 @@
+<h1>Images</h1>
 <ul>
-
-    @foreach($pictures as $picture)
+    @foreach ($pictures as $picture)
         <li>
-            <a href="{{ route('pictures.show', $picture) }}">
-                <p>{{ $picture->title }}</p>
-                    <img src="{{ route('pictures.show', $picture) }}" style="width: 200px;">
-            </a>
+            <p>
+                <a href="{{ route('pictures.show', $picture) }}">
+                    {{ $picture->title }}
+                    <img src="{{ route('pictures.show', $picture) }}">
+                </a>
+            </p>
         </li>
     @endforeach
-
 </ul>
 

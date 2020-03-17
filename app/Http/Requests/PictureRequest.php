@@ -25,7 +25,7 @@ class PictureRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:42',
-            'picture' => 'required|image'
+            'storage_path' => 'required|string'
         ];
     }
 }
